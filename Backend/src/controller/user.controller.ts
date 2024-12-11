@@ -45,3 +45,14 @@ export const signinUser = async (req: Request, res: Response, next: NextFunction
 
     next();
 }
+
+export const addContent = async (req: Request, res: Response, next: NextFunction): Promise<any> =>{
+    const error = validationResult(req);
+
+    if(!error.isEmpty()){
+        return res.status(400).json({ errors: error.array() });
+    }
+
+    console.log(req.userId)
+    res.send(req.userId)
+}

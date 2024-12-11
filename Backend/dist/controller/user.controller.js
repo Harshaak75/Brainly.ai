@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.signinUser = exports.registerUser = void 0;
+exports.addContent = exports.signinUser = exports.registerUser = void 0;
 const user_service_1 = require("../services/user.service");
 const express_validator_1 = require("express-validator");
 const registerUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
@@ -43,3 +43,12 @@ const signinUser = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
     next();
 });
 exports.signinUser = signinUser;
+const addContent = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const error = (0, express_validator_1.validationResult)(req);
+    if (!error.isEmpty()) {
+        return res.status(400).json({ errors: error.array() });
+    }
+    console.log(req.userId);
+    res.send(req.userId);
+});
+exports.addContent = addContent;

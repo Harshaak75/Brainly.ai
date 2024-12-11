@@ -1,1 +1,1 @@
-{"root":["./src/config.ts","./src/index.ts","./src/server.ts","./src/controller/user.controller.ts","./src/db/db.ts","./src/models/user.model.ts","./src/routes/user.routes.ts","./src/services/user.service.ts"],"version":"5.7.2"}
+{"root":["./src/config.ts","./src/index.ts","./src/server.ts","./src/controller/user.controller.ts","./src/db/db.ts","./src/middleware/user.middleware.ts","./src/models/user.model.ts","./src/routes/user.routes.ts","./src/services/user.service.ts","./src/types/express.d.ts"],"version":"5.7.2"}

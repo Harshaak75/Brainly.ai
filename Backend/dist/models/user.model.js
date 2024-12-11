@@ -50,12 +50,12 @@ user.methods.generateAuthToken = function () {
     return token;
 };
 exports.users = mongoose_1.default.model("users", user);
-// const content = new Schema({
-//     title: {type: "string", required: true},
-//     link: {type: "string", required: true},
-//     type: {type: "string", required: true},
-//     tags: [{type: mongoose.Types.ObjectId}],
-//     user_id: {type: Schema.Types.ObjectId, ref: "users"},
-//     created_at: {type: Date, default: Date.now()}    
-// })
+const content = new mongoose_1.Schema({
+    title: { type: "string", required: true },
+    link: { type: "string", required: true },
+    type: { type: "string", required: true },
+    tags: [{ type: mongoose_1.default.Types.ObjectId }],
+    user_id: { type: mongoose_1.Schema.Types.ObjectId, ref: "users" },
+    created_at: { type: Date, default: Date.now() }
+});
 // export const contents = mongoose.model("contents", content);

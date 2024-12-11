@@ -2,7 +2,8 @@
 
 import express from "express"
 import { body } from "express-validator";
-import { registerUser, signinUser } from "../controller/user.controller";
+import { registerUser, signinUser, addContent } from "../controller/user.controller";
+import { userAuthValidate } from "../middleware/user.middleware";
 
 const router = express.Router();
 
@@ -19,6 +20,15 @@ router.post("/signin",[
     body('password').isLength({min: 6}).notEmpty().withMessage('Password is required')
 ],
 signinUser
+)
+
+router.post("/content",[
+    userAuthValidate,
+    body('title').notEmpty().withMessage('Title is required'),
+    body('link').notEmpty().withMessage('Link is required'),
+    body('type').notEmpty().withMessage('Type is required')
+],
+addContent
 )
 
 

@@ -22,13 +22,13 @@ user.methods.generateAuthToken = function(): string{
 
 export const users =  mongoose.model<IUser>("users", user);
 
-// const content = new Schema({
-//     title: {type: "string", required: true},
-//     link: {type: "string", required: true},
-//     type: {type: "string", required: true},
-//     tags: [{type: mongoose.Types.ObjectId}],
-//     user_id: {type: Schema.Types.ObjectId, ref: "users"},
-//     created_at: {type: Date, default: Date.now()}    
-// })
+const content = new Schema({
+    title: {type: "string", required: true},
+    link: {type: "string", required: true},
+    type: {type: "string", required: true},
+    tags: [{type: mongoose.Types.ObjectId}],
+    user_id: {type: Schema.Types.ObjectId, ref: "users"},
+    created_at: {type: Date, default: Date.now()}    
+})
 
 // export const contents = mongoose.model("contents", content);
